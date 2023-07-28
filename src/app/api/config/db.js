@@ -1,30 +1,30 @@
-const { MongoClient, ServerApiVersion } = require("mongodb");
-
-// Replace the placeholder with your Atlas connection string
-const uri = "<connection string>";
+import mongoose from "mongoose";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-});
-
-async function run() {
+export async function connectDb() {
   try {
-    // Connect the client to the server (optional starting in v4.7)
-    await client.connect();
-
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log(
-      "Pinged your deployment. You successfully connected to MongoDB!"
-    );
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
+    if (mongoose.connection.readyState !== 1) {
+      // Check if the connection is not already established (readyState 1)
+      await mongoose.connect(
+        "mongodb+srv://tejasgiri910:admin@cluster0.kstrcyy.mongodb.net/quizapp",
+        {
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+        }
+      );
+      console.log("Connected to MongoDB");
+    } else {
+      console.log("Database already connected");
+    }
+  } catch (error) {
+    console.error("Error connecting to MongoDB:", error.message);
   }
 }
-run().catch(console.dir);
+
+export async function disConnect() {
+  try {
+    await mongoose.disconnect();
+  } catch (error) {
+    console.log(error);
+  }
+}
