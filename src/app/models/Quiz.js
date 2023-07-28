@@ -7,10 +7,10 @@ const quizSchema = new mongoose.Schema({
       question: String,
       options: [
         {
-          isCorrect: Boolean,
           option: String,
         },
       ],
+      correctOption: Number,
     },
   ],
   // Add other fields as needed
