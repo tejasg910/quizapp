@@ -25,3 +25,16 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer base {
+  /* navbar styling  */
+  .navbar__links {
+    @apply hidden sm:block;
+  }
+
+  .navbar__drawer {
+    @apply block sm:hidden;
+  }
+
+  /* ... */
+}

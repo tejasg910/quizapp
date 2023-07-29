@@ -1,5 +1,7 @@
 // Navbar.js
 import React from "react";
+import Drawer from "../global/Drawer";
+import NavbarDrawer from "../global/Drawer";
 
 const Navbar = () => {
   return (
@@ -7,23 +9,26 @@ const Navbar = () => {
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <div className=" text-xl font-bold">Solve Quizzes</div>
-          <ul className="flex space-x-4">
-            <li>
-              <a className="" href="/">
-                Home
-              </a>
-            </li>
-            <li>
-              <a className="" href="/about">
-                About
-              </a>
-            </li>
-            <li>
-              <a className="" href="/contact">
-                Contact
-              </a>
-            </li>
-          </ul>
+          <div className="navbar__links">
+            <ul className=" flex space-x-4">
+              <li>
+                <a className="" href="/">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a className="" href="/about">
+                  About
+                </a>
+              </li>
+              <li>
+                <a className="" href="/contact">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+          <NavbarDrawer />
         </div>
       </div>
     </nav>
