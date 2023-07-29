@@ -1,0 +1,20 @@
+{
+  "categories": [
+    {
+      "category": "General Knowledge",
+      "description": "General Knowledge is a diverse category that encompasses a wide range of facts, information, and trivia from various fields. It covers everything from science and literature to arts and sports. A quiz on general knowledge can test your overall awareness and understanding of the world around you."
+    },
+    {
+      "category": "Current Affairs",
+      "description": "Current Affairs deals with the latest happenings, news, and events from around the world. It includes political developments, social issues, economic trends, technological advancements, and more. Staying updated with current affairs is essential for being well-informed and engaged in global affairs."
+    },
+    {
+      "category": "Geography",
+      "description": "Geography focuses on the study of the Earth's physical features, including continents, countries, mountains, rivers, and climates. It explores the relationships between human societies and the environment they inhabit. A geography quiz can challenge your knowledge of the planet's diverse landscapes and locations."
+    },
+    {
+      "category": "History",
+      "description": "History is the study of past events, civilizations, and human achievements. It delves into the actions of historical figures, the rise and fall of empires, and significant moments that shaped our world. A history quiz allows you to explore the rich tapestry of human experiences and learn from our collective past."
+    }
+  ]
+}

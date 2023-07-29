@@ -13,6 +13,7 @@ const quizSchema = new mongoose.Schema({
       correctOption: Number,
     },
   ],
+  category: String,
   // Add other fields as needed
 });
 const Quiz = mongoose.models.Quiz || mongoose.model("User", quizSchema);

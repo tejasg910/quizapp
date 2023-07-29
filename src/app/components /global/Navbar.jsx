@@ -1,7 +1,7 @@
 // Navbar.js
 import React from "react";
-import Drawer from "../global/Drawer";
-import NavbarDrawer from "../global/Drawer";
+import Drawer from "./Drawer";
+import NavbarDrawer from "./Drawer";
 
 const Navbar = () => {
   return (
