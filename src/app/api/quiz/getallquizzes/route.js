@@ -5,28 +5,26 @@ import mongoose from "mongoose";
 import { connectDb } from "../../config/db";
 import Quiz from "@/app/models/Quiz";
 
-export async function POST(request) {
+export async function GET(request) {
   // Set up MongoDB connection using Mongoose
 
   try {
-    const { title, questions } = await request.json();
     await connectDb();
 
-    const quiz = await new Quiz({ title, questions });
-
-    quiz.save();
+    const quizzess = await Quiz.find({});
 
     return NextResponse.json({
       success: true,
-      message: "Quiz created successfully",
+      data: quizzess,
     });
   } catch (error) {
     // Mongoose automatically handles client close when you finish/error
+
     await mongoose.disconnect();
 
     return NextResponse.json({
       success: false,
-      message: "Something went wrong",
+      message: "Somwthing went wrong",
     });
   }
 }

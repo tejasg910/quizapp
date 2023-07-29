@@ -15,7 +15,6 @@ const quizSchema = new mongoose.Schema({
   ],
   // Add other fields as needed
 });
-
-const Quiz = mongoose.model("Quiz", quizSchema);
+const Quiz = mongoose.models.Quiz || mongoose.model("User", quizSchema);
 
 export default Quiz;
