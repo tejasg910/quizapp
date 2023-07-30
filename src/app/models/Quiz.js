@@ -13,9 +13,13 @@ const quizSchema = new mongoose.Schema({
       correctOption: Number,
     },
   ],
-  category: String,
+  category: { type: String, required: true },
+  timeLimit: {
+    type: Number, // You can use Date type as well if you need more flexibility (e.g., using ISODate)
+    required: true,
+  },
   // Add other fields as needed
 });
-const Quiz = mongoose.models.Quiz || mongoose.model("User", quizSchema);
+const Quiz = mongoose.models.Quiz || mongoose.model("Quiz", quizSchema);
 
 export default Quiz;

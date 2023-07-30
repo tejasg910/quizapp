@@ -5,6 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Link from "next/link";
 
 export default function QuizCard({ title, content }) {
   return (
@@ -25,7 +26,9 @@ export default function QuizCard({ title, content }) {
       </CardContent>
       <CardActions>
         <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Link href={`/startquiz/${title}`}>
+          <Button size="small">Start</Button>
+        </Link>
       </CardActions>
     </Card>
   );

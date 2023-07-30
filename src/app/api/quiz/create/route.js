@@ -9,10 +9,10 @@ export async function POST(request) {
   // Set up MongoDB connection using Mongoose
 
   try {
-    const { title, questions } = await request.json();
+    const { title, questions, category, timeLimit } = await request.json();
     await connectDb();
-
-    const quiz = await new Quiz({ title, questions });
+    console.log("in create function");
+    const quiz = await new Quiz({ title, questions, category, timeLimit });
 
     quiz.save();
 
