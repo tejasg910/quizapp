@@ -1,6 +1,7 @@
+import Link from "next/link";
 import React from "react";
 
-const QuizCategoryCard = ({ title }) => {
+const QuizCategoryCard = ({ title, category, id }) => {
   return (
     <div className="m-4">
       <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -10,8 +11,8 @@ const QuizCategoryCard = ({ title }) => {
           </h5>
         </a>
 
-        <a
-          href="#"
+        <Link
+          href={`/startquiz/${category}/${id}`}
           class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue rounded-lg hover:bg-blue focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           Start Now
@@ -30,7 +31,7 @@ const QuizCategoryCard = ({ title }) => {
               d="M1 5h12m0 0L9 1m4 4L9 9"
             />
           </svg>
-        </a>
+        </Link>
       </div>
     </div>
   );
